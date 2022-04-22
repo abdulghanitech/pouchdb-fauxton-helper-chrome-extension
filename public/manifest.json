@@ -2,7 +2,7 @@
     "name": "Chrome PuouchDB Fauxton Helper",
     "description": "An extension to store and retrieve fauxton queries in chrome",
     "version": "1.0",
-    "manifest_version": 3,
+    "manifest_version": 2,
     "action": {
         "default_popup": "index.html",
         "default_title": "Open the popup"
@@ -12,7 +12,15 @@
         "48": "logo192.png",
         "128": "logo192.png"
     },
-    "permissions": ["activeTab"],
+    "permissions": [
+        "activeTab",
+        "webRequest",
+        "<all_urls>",
+        "webRequestBlocking"
+    ],
+    "background": {
+        "scripts": ["./static/js/background.js"]
+    },
     "content_scripts": [
         {
             "matches": ["http://*/*", "https://*/*"],

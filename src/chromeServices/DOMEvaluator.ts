@@ -111,3 +111,19 @@ function init() {
 }
 
 init();
+
+function networkIntercept(){
+    console.log("network intercepted")
+}
+
+// chrome.webRequest.onBeforeRequest.addListener(tab => {
+//     chrome.scripting.executeScript(
+//         {
+//         target: { tabId: tab.tabId },
+//         function: networkIntercept,
+//         args: [details.url],
+//         },
+//         () => { console.log('ZZZ') });
+//     },  {
+//         urls: ['<all_urls>']
+//     });  
