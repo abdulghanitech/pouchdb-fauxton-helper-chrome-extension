@@ -77,6 +77,8 @@ async function init() {
                 queryEl.appendChild(queryParagraph);
 
                 const removeQueryButton = document.createElement("button");
+                removeQueryButton.style.width = "30px";
+                removeQueryButton.style.height = "30px";
                 removeQueryButton.innerText = "X";
                 removeQueryButton.addEventListener("click", () => {
                     removeStoredQuery(index);
