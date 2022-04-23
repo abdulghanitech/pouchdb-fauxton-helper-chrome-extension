@@ -1,9 +1,9 @@
-var arrayBufferToData = {
+const arrayBufferToData = {
     toBase64: function (arrayBuffer) {
-        var binary = "";
-        var bytes = new Uint8Array(arrayBuffer);
-        var len = bytes.byteLength;
-        for (var i = 0; i < len; i++) {
+        let binary = "";
+        let bytes = new Uint8Array(arrayBuffer);
+        let len = bytes.byteLength;
+        for (let i = 0; i < len; i++) {
             binary += String.fromCharCode(bytes[i]);
         }
         return window.btoa(binary);
@@ -11,7 +11,7 @@ var arrayBufferToData = {
 
     toString: function (arrayBuffer) {
         try {
-            var base64 = this.toBase64(arrayBuffer);
+            const base64 = this.toBase64(arrayBuffer);
 
             return decodeURIComponent(escape(window.atob(base64)));
         } catch (e) {
@@ -22,7 +22,7 @@ var arrayBufferToData = {
 
     toJSON: function (arrayBuffer) {
         try {
-            var string = this.toString(arrayBuffer);
+            const string = this.toString(arrayBuffer);
             return JSON.parse(string);
         } catch (e) {
             console.warn("Can not be converted to JSON");
@@ -39,24 +39,16 @@ function requestHandler(req) {
         req.requestBody?.raw?.length > 0 &&
         req.requestBody?.raw[0]?.bytes
     ) {
-        console.log("XHR");
-        // console.log(req.requestHeaders);
+        console.log("XHR request is made!");
         console.log(req.requestBody);
         const buffer = req.requestBody?.raw[0]?.bytes;
-        // arrayBufferToJSON(buffer);
-        // console.log(arrayBufferToJSON(buffer));
         try {
             const query = arrayBufferToData.toJSON(buffer);
             console.log(query);
             // if queryJSON(query) is there then store it in chrome storage
             storeQuery(query);
             // send the event to content.js
-            console.log("sending event to content.js");
-            // chrome.runtime.sendMessage({
-            //     type: "QUERY_ADDED",
-            //     query,
-            // });
-
+            // console.log("sending event to content.js");
             notifyContentScript({
                 type: "QUERY_ADDED",
                 query,
@@ -72,10 +64,6 @@ function notifyContentScript(message) {
         chrome.tabs.sendMessage(tabs[0].id, message);
     });
 }
-
-// chrome.storage.local.set({
-//     query: query,
-// });
 
 function storeQuery(query) {
     // get the queryJSON Array and push to it

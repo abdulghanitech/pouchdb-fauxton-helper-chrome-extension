@@ -1,11 +1,7 @@
 function main() {
     console.log("injected.js script injected");
 
-    const targetArea = document.querySelector(
-        ".form-horizontal div.bordered-box"
-    );
-    // console.log({ targetArea });
-
+    // The editor used by pouchdb-fauxton-client to write queries
     const editor = window?.ace?.edit("query-field");
     const code = editor.getValue();
     // console.log({ code });
@@ -13,7 +9,7 @@ function main() {
     //     '{\n  "hello": {\n    "_id": {\n      "$gt": null\n    }\n  }\n}'
     // );
 
-    // add listener to storedQueries div element
+    // add listener to storedQueries paragraph element
     const storedQueriesEl = document.querySelectorAll(".storedQueries");
 
     if (storedQueriesEl && storedQueriesEl.length > 0) {
