@@ -6,6 +6,11 @@ This project was created to assist in the querying of pouchdb fauxton UI. The qu
 
 As of now, this chrome extension is not yet submitted to chrome store, so you need to manually load it through developer mode -> load unpacked extensions.
 
+### Without extension
+<img width="1437" alt="image" src="https://user-images.githubusercontent.com/18095705/164910883-3a259330-25ee-49d2-a949-ed1e7f1c303d.png">
+
+### With extension
+![PouchDB Server](https://user-images.githubusercontent.com/18095705/164911554-29193ea2-151b-41d0-b2a8-15e2f7080a77.gif)
 
 ## Contribute
 
