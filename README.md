@@ -1,6 +1,6 @@
 # Getting Started with PouchDB Fauxton Helper - Chrome Extension
 
-This project was created to assist in the querying of pouchdb fauxton UI. The query box doesn't store previously used queries and hence we have to re-type the query if we want to execute it again. Hence, the idea was born to solve this problem. The extension adds a nice and handu UI to store executed queries and show them in a list, clicking on this list item would help you to execute again for the same query. 
+This project was created to assist in the querying of pouchdb fauxton UI. The query box doesn't store previously used queries and hence we have to re-type the query if we want to execute it again. Hence, the idea was born to solve this problem. The extension adds a nice and handy UI to store executed queries and show them in a list, clicking on this list item would help you to execute again for the same query. 
 
 ## How to Use
 
