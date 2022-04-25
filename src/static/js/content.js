@@ -4,7 +4,7 @@ s.src = chrome.runtime.getURL("injected.js");
 s.onload = function () {
     this.remove();
 };
-(document.head || document.documentElement).appendChild(s);
+(document.body || document.documentElement).appendChild(s);
 
 // get storage from storage
 async function getStoredQueries() {
