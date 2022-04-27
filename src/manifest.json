@@ -23,7 +23,7 @@
     },
     "content_scripts": [
         {
-            "matches": ["http://*/*", "https://*/*"],
+            "matches": ["http://localhost:3000/*"],
             "js": ["./static/js/content.js"]
         }
     ],
