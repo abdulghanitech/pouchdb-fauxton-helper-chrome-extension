@@ -18,4 +18,4 @@ You can raise issues, or get a feature developed by yourselves and raise a PR he
 
 ## Learn More
 
-You can ping me on [Twitter](https://twitter.com/abdulghanitech) to dicuss about this project or any ideas.
+You can ping me to dicuss about this project or any ideas.
